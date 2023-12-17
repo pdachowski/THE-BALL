@@ -4,8 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class CameraController : MonoBehaviour
-{
+public class CameraController : MonoBehaviour {
     public Transform target;
     public Vector3 positionOffset = new(0, 2, -8);
     public float sensitivity = 2f;
@@ -13,14 +12,12 @@ public class CameraController : MonoBehaviour
     private float _angleX;
     private float _angleY;
 
-    private void Start()
-    {
+    private void Start() {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
 
-    void Update()
-    {
+    void Update() {
         _angleX += Input.GetAxis("Mouse X") * sensitivity;
         _angleY += Input.GetAxis("Mouse Y") * sensitivity;
 

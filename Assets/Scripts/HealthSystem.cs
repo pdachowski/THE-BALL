@@ -5,42 +5,35 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class HealthSystem : MonoBehaviour
-{
+public class HealthSystem : MonoBehaviour {
     [SerializeField] private int currentHealth;
     [SerializeField] private int maxHealth = 3;
     [SerializeField] private TextMeshProUGUI currentHealthText;
     
-    private void Start()
-    {
+    private void Start() {
         currentHealth = maxHealth;
         RefreshUI();
     }
     
-    public bool CanBeHealed()
-    {
+    public bool CanBeHealed() {
         return currentHealth < maxHealth;
     }
 
-    public void TakeDamage(int damage)
-    {
+    public void TakeDamage(int damage) {
         currentHealth -= damage;
         RefreshUI();
-        if (currentHealth <= 0)
-        {
+        if (currentHealth <= 0) {
             SceneManager.LoadScene(0);
         }
     }
 
-    public void Heal(int value)
-    {
+    public void Heal(int value) {
         currentHealth += value;
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
         RefreshUI();
     }
 
-    private void RefreshUI()
-    {
+    private void RefreshUI() {
         currentHealthText.text = $"{currentHealth}/{maxHealth}HP";
     }
 }
