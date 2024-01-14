@@ -1,7 +1,6 @@
 using UnityEngine;
 
 public class Coin : MonoBehaviour {
-
     public int pointsToAdd = 1;
 
     private void OnTriggerEnter(Collider other) {
@@ -9,7 +8,7 @@ public class Coin : MonoBehaviour {
 
         if (other.transform.CompareTag("Player")) {
 
-            PointsSystem.OnPointsCollected(this);
+            PointsSystem.OnPointsCollected(this, new PointCollectedEventArguments(pointsToAdd, transform.position));
             Destroy(gameObject);
 
             /*

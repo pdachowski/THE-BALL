@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 
@@ -11,6 +8,7 @@ public class CameraController : MonoBehaviour {
 
     private float _angleX;
     private float _angleY;
+    public Vector2 yRotationRange;
 
     private void Start() {
         Cursor.lockState = CursorLockMode.Locked;
@@ -20,6 +18,8 @@ public class CameraController : MonoBehaviour {
     void Update() {
         _angleX += Input.GetAxis("Mouse X") * sensitivity;
         _angleY += Input.GetAxis("Mouse Y") * sensitivity;
+
+        _angleY = Mathf.Clamp(_angleY, yRotationRange.x, yRotationRange.y);
 
         Quaternion rotation = Quaternion.Euler(-_angleY, _angleX, 0);
         Vector3 position = rotation * positionOffset + target.transform.position;

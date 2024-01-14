@@ -423,6 +423,7 @@ MonoBehaviour:
   target: {fileID: 798230309}
   positionOffset: {x: 0, y: 2, z: -8}
   sensitivity: 2
+  yRotationRange: {x: -45, y: 15}
 --- !u!1 &359669154
 GameObject:
   m_ObjectHideFlags: 0
@@ -2501,7 +2502,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 171.63062, y: -41.059998}
+  m_AnchoredPosition: {x: 171.63062, y: -41.06006}
   m_SizeDelta: {x: 286.0592, y: 82.12}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1270921929
@@ -2966,7 +2967,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentPoints: 0
-  currentPointsText: {fileID: 569830479}
 --- !u!4 &1745757810
 Transform:
   m_ObjectHideFlags: 0
